@@ -1,0 +1,10 @@
+{
+  "name": "portfolio-web",
+  "private": true,
+  "scripts": {
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd zainab-portfolio && npm install",
+    "build": "cd zainab-portfolio && npm run build",
+    "start": "node backend/server.js"
+  }
+}
