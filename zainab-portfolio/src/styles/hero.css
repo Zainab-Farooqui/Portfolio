@@ -1,0 +1,242 @@
+/* =======================
+   HERO SECTION
+======================= */
+.hero-section {
+  min-height: 100vh;
+  background: radial-gradient(
+    circle at top left,
+    #141414,
+    #0b0b0b,
+    #050505
+  );
+  display: flex;
+  align-items: center;
+  padding: 80px 6%;
+}
+
+/* =======================
+   CONTAINER
+======================= */
+.hero-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+}
+
+/* =======================
+   LEFT – IMAGE
+======================= */
+.hero-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image-wrapper.cinematic {
+  position: relative;
+  width: 340px;
+  aspect-ratio: 3 / 4;
+  border-radius: 50% 50% 45% 45%;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.hero-image-wrapper.cinematic:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.05) brightness(0.95);
+  z-index: 2;
+  position: relative;
+}
+
+/* Red cinematic glow */
+.hero-red-glow {
+  position: absolute;
+  inset: -35px;
+  background: radial-gradient(
+    circle,
+    rgba(160, 0, 0, 0.55),
+    transparent 70%
+  );
+  filter: blur(55px);
+  z-index: 1;
+}
+
+/* =======================
+   RIGHT – CONTENT
+======================= */
+.hero-right {
+  flex: 1.2;
+  color: #ffffff;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.hero-title span {
+  color: #b00000;
+}
+
+.hero-subtitle {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #cccccc;
+  margin-bottom: 22px;
+}
+
+.typing-text {
+  color: #b00000;
+  font-weight: 600;
+}
+
+.hero-description {
+  max-width: 520px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #aaaaaa;
+  margin-bottom: 34px;
+}
+
+/* =======================
+   BUTTONS
+======================= */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: #b00000;
+  color: #fff;
+  border: none;
+}
+
+.btn.primary:hover {
+  background: #d00000;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.btn.secondary:hover {
+  border-color: #b00000;
+  color: #b00000;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image-wrapper.cinematic {
+    width: 260px;
+    margin-bottom: 24px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+/* =======================
+   REVEAL ANIMATIONS
+======================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: revealUp 0.8s ease forwards;
+}
+
+.reveal.delay-1 { animation-delay: 0.15s; }
+.reveal.delay-2 { animation-delay: 0.3s; }
+.reveal.delay-3 { animation-delay: 0.45s; }
+
+@keyframes revealUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =======================
+   BUTTON MICRO-INTERACTIONS
+======================= */
+.btn {
+  position: relative;
+}
+
+.btn.primary::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle,
+    rgba(208, 0, 0, 0.35),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn.primary:hover::after {
+  opacity: 1;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =======================
+   IMAGE MICRO DEPTH
+======================= */
+.hero-image-wrapper.cinematic {
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.hero-image-wrapper.cinematic:hover {
+  box-shadow: 0 30px 80px rgba(160, 0, 0, 0.25);
+}
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}

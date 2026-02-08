@@ -1,0 +1,15 @@
+# root
+node_modules/
+.env
+
+# backend
+backend/node_modules/
+backend/.env
+
+# frontend
+zainab-portfolio/node_modules/
+zainab-portfolio/dist/
+
+# misc
+.vscode/
+.DS_Store

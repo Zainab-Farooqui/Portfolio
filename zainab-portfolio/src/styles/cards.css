@@ -1,0 +1,95 @@
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.skill-card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+}
+/* =======================
+   ABOUT SECTION
+======================= */
+
+.about-section {
+  padding: 100px 6%;
+  background: #050505;
+  color: #ffffff;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+}
+
+/* LEFT */
+.about-text p {
+  color: #b0b0b0;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-size: 1rem;
+}
+
+.section-heading {
+  font-size: 2.6rem;
+  margin-bottom: 30px;
+  color: #b00000;
+  font-weight: 700;
+}
+
+.highlight {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* RIGHT CARDS */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.about-card {
+  background: #0b0b0b;
+  border: 1px solid #1f1f1f;
+  padding: 22px;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  border-color: #b00000;
+  transform: translateY(-4px);
+}
+
+.about-card h4 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.about-card p {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+}
