@@ -16,30 +16,35 @@ function Contact() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // 🔴 STOP page refresh
+  e.preventDefault();
 
-    console.log("Sending:", formData); // debug
+  console.log("Sending:", formData);
 
-    try {
-      const response = await fetch("http://localhost:5000/api/feedback", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+  try {
+    const response = await fetch("/api/feedback", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
-      const data = await response.json();
-      console.log("Server response:", data);
+    const data = await response.json();
+    console.log("Server response:", data);
 
+    // ✅ THIS IS THE FIX
+    if (response.ok) {
       alert("Message sent successfully ✅");
-
       setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      console.error("Error:", error);
-      alert("Failed to send message ❌");
+    } else {
+      alert(data.error || "Failed to send message ❌");
     }
-  };
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Failed to send message ❌");
+  }
+};
+
 
   return (
     <section className="contact-section" id="contact">
