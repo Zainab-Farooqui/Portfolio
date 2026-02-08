@@ -8,7 +8,7 @@ const feedbackRoutes = require("./routes/feedback");
 
 const app = express();
 
-// Middlewares
+// -------------------- MIDDLEWARES --------------------
 app.use(cors());
 app.use(express.json());
 
@@ -19,22 +19,21 @@ mongoose.set("bufferCommands", false);
 app.use("/api/feedback", feedbackRoutes);
 
 // -------------------- SERVE FRONTEND (VITE BUILD) --------------------
-// Resolve root project directory
 const rootDir = path.resolve(__dirname, "..");
 
-// Serve static files from Vite build
+// Serve static assets
 app.use(
   express.static(path.join(rootDir, "zainab-portfolio", "dist"))
 );
 
-// For all other routes, tell React to handle routing
-app.get("*", (req, res) => {
+// SPA fallback (Express 5 SAFE)
+app.use((req, res) => {
   res.sendFile(
     path.join(rootDir, "zainab-portfolio", "dist", "index.html")
   );
 });
 
-// -------------------- SERVER + DB --------------------
+// -------------------- DATABASE + SERVER --------------------
 const PORT = process.env.PORT || 5000;
 
 mongoose
