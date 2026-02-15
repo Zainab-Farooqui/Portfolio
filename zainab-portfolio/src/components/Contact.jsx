@@ -21,7 +21,8 @@ function Contact() {
   console.log("Sending:", formData);
 
   try {
-    const response = await fetch("/api/feedback", {
+    const response = await fetch("https://portfolio-backend-umu6.onrender.com/api/feedback", {
+
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +35,7 @@ function Contact() {
 
     // ✅ THIS IS THE FIX
     if (response.ok) {
-      alert("Message sent successfully ✅");
+      alert("Message sent successfully!✅");
       setFormData({ name: "", email: "", message: "" });
     } else {
       alert(data.error || "Failed to send message ❌");
@@ -94,9 +95,9 @@ function Contact() {
           </form>
 
           <div className="contact-links">
-            <a href="mailto:zainabfarooqui@example.com">Email</a>
+            <a href="mailto:zainabfarooqui096@gmail.com">Email</a>
             <a href="https://github.com/Zainab-Farooqui">GitHub</a>
-            <a href="https://linkedin.com">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/zainab-farooqui-40b118248/">LinkedIn</a>
           </div>
         </div>
 
