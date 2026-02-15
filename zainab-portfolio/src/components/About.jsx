@@ -17,8 +17,8 @@ function About() {
           <h2 className="section-heading">About Me</h2>
 
           <p>
-            I’m <span className="highlight">Zainab Farooqui</span>, a B.Sc. IT
-            graduate with a strong interest in building scalable web
+            I’m <span className="highlight">Zainab Farooqui</span>, an MCA student at SPIT
+            with a strong interest in building scalable web
             applications, AI-powered systems, and clean user experiences.
           </p>
 
@@ -33,7 +33,7 @@ function About() {
         <div className="about-cards">
           <div className="about-card">
             <h4>🎓 Education</h4>
-            <p>B.Sc. Information Technology</p>
+            <p>MCA</p>
           </div>
 
           <div className="about-card">
@@ -48,7 +48,7 @@ function About() {
 
           <div className="about-card">
             <h4>🚀 Goal</h4>
-            <p>To grow as an AI & Software Engineer</p>
+            <p>To grow as an AI & ML Software Engineer</p>
           </div>
         </div>
       </div>
