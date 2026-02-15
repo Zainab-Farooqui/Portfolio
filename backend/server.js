@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const path = require("path");
 require("dotenv").config();
 
 const feedbackRoutes = require("./routes/feedback");
@@ -18,19 +17,9 @@ mongoose.set("bufferCommands", false);
 // -------------------- API ROUTES --------------------
 app.use("/api/feedback", feedbackRoutes);
 
-// -------------------- SERVE FRONTEND (VITE BUILD) --------------------
-const rootDir = path.resolve(__dirname, "..");
-
-// Serve static assets
-app.use(
-  express.static(path.join(rootDir, "zainab-portfolio", "dist"))
-);
-
-// SPA fallback (Express 5 SAFE)
-app.use((req, res) => {
-  res.sendFile(
-    path.join(rootDir, "zainab-portfolio", "dist", "index.html")
-  );
+// Simple test route
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
 });
 
 // -------------------- DATABASE + SERVER --------------------
